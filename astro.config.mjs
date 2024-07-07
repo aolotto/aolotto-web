@@ -7,6 +7,9 @@ export default defineConfig({
   i18n: {
     defaultLocale: "en",
     locales: ["cn", "en"],
+    routing: {
+      prefixDefaultLocale: false
+    }
   },
   integrations: [tailwind()],
   site: "https://aolotto.com"
