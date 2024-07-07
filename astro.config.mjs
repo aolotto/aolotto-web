@@ -8,5 +8,6 @@ export default defineConfig({
     defaultLocale: "en",
     locales: ["cn", "en"],
   },
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  site: "https://aolotto.com"
 });
