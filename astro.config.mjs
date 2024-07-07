@@ -9,6 +9,9 @@ export default defineConfig({
     locales: ["cn", "en"],
     routing: {
       prefixDefaultLocale: false
+    },
+    fallback: {
+      cn : "en"
     }
   },
   integrations: [tailwind()],
