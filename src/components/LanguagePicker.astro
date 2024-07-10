@@ -1,5 +1,6 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { Icon } from 'astro-icon/components'
 
 const languages = {
   en: 'English',
@@ -17,5 +18,5 @@ const path = parts.join("/")
   ))}
 </ul> -->
 <div>
-  English
+  <Icon name="carbon:translate" />
 </div>

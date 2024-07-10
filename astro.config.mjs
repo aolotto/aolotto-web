@@ -1,20 +1,20 @@
 import { defineConfig } from 'astro/config';
 
-import tailwind from "@astrojs/tailwind";
+import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
   i18n: {
     defaultLocale: "en",
-    locales: ["en","cn"],
+    locales: ["en", "cn"],
     routing: {
       prefixDefaultLocale: true
     },
     fallback: {
-      cn : "en"
+      cn: "en"
     }
   },
-  integrations: [tailwind()],
+  integrations: [icon()],
   site: "https://aolotto.com",
   trailingSlash: 'ignore'
 });

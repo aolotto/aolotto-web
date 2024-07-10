@@ -1,0 +1,23 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const links = [{
+  label: "github",
+  url:"https://github.com/aolotto/aolotto"
+},{
+  label: "twitter",
+  url:"https://x.com/aolotto_dao"
+},{
+  label: "discord",
+  url:"https://discord.com/invite/BFhkUCRjmF"
+}]
+
+---
+<footer class="flex w-full justify-between">
+  <div class="text-base-content/50">© MIT License 2024.</div>
+  <div class="">
+    <ul class="flex justify-end gap-4">
+      {links.map((item)=><li><a href={item.url}><Icon name={`carbon:logo-${item.label}`} /></a></li>)}
+    </ul>
+  </div>
+</footer>

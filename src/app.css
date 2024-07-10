@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #6535CD;
+  --color-primary-content: #DEC9FF;
+  --color-base-100: #aaa;
+  --color-base-200: #eee;
+  --color-base-content: #111;
+}
+
+@media (prefers-color-scheme: dark)  {
+  @theme {
+    --color-base-100: #111;
+    --color-base-200: #333;
+    --color-base-content: #aaa;
+  }
+}
+
+:root{
+  @apply bg-base-100 text-base-content;
+}
+
+.btn-primary{
+  @apply border px-[1em] py-[0.5em] inline-flex border-primary-content bg-primary-content text-primary rounded-full gap-2 items-center font-bold text-xl;
+
+  &:hover{
+    @apply bg-primary text-primary-content;
+  }
+}

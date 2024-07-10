@@ -1,4 +1,5 @@
 ---
+import "../app.css";
 interface Props {
 	title: string;
 }
@@ -18,12 +19,12 @@ const lang = parts.shift() || parts.shift();
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="flex h-[100vh] justify-center align-middle items-center">
+	<body class="flex h-[100vh] justify-center align-middle items-center overflow-y-scroll">
 		<slot />
 	</body>
 </html>
-<style is:global>
-
+<!-- <style is:global>
+	@import "tailwindcss";
 	html {
 		font-family: system-ui, sans-serif;
 		@apply bg-base-100 text-base-content;
@@ -34,12 +35,25 @@ const lang = parts.shift() || parts.shift();
 			@apply bg-base-content text-base-100;
 		}
 	}
-
+/* 
 	.btn{
-		@apply px-[1em] py-[0.5em] bg-primary-content text-primary font-bold;
-		&:hover{
-			@apply bg-primary text-primary-content;
+		@apply gap-2 font-semibold no-underline duration-200 ease-out px-[1em] py-[0.5em] border rounded;
+		&{
+			@apply text-base-content bg-base-100 border-base-100;
 		}
-	}
+		&:hover{
+			@apply bg-base-content text-base-100 border-base-100;
+		}
+		&_lg{
+			@apply text-2xl px-[1.2em] py-[0.8em];
+		}
+		&-primary{
+			@apply bg-primary-content text-primary;
+		}
+		&-primary:hover{
+			@apply text-primary-content bg-primary;
+		}
 
-</style>
+	} */
+
+</style> -->
