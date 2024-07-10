@@ -1,0 +1,45 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title="aolotto" } = Astro.props;
+const parts = Astro.url.pathname?.split('/');
+const lang = parts.shift() || parts.shift();
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="flex h-[100vh] justify-center align-middle items-center">
+		<slot />
+	</body>
+</html>
+<style is:global>
+
+	html {
+		font-family: system-ui, sans-serif;
+		@apply bg-base-100 text-base-content;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		html {
+			@apply bg-base-content text-base-100;
+		}
+	}
+
+	.btn{
+		@apply px-[1em] py-[0.5em] bg-primary-content text-primary font-bold;
+		&:hover{
+			@apply bg-primary text-primary-content;
+		}
+	}
+
+</style>

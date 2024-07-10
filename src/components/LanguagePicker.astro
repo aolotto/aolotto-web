@@ -1,0 +1,21 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const languages = {
+  en: 'English',
+  cn: '中文',
+};
+const parts = Astro.url.pathname?.split('/');
+const lang = parts.shift() || parts.shift();
+const path = parts.join("/")
+---
+<!-- <ul>
+  {Object.entries(languages).map(([locale, label]) => (
+    <li>
+      <a href={getRelativeLocaleUrl(locale,path)}>{label}</a>
+    </li>
+  ))}
+</ul> -->
+<div>
+  English
+</div>

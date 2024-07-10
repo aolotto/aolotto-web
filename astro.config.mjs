@@ -6,14 +6,15 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   i18n: {
     defaultLocale: "en",
-    locales: ["cn", "en"],
+    locales: ["en","cn"],
     routing: {
-      prefixDefaultLocale: false
+      prefixDefaultLocale: true
     },
     fallback: {
       cn : "en"
     }
   },
   integrations: [tailwind()],
-  site: "https://aolotto.com"
+  site: "https://aolotto.com",
+  trailingSlash: 'ignore'
 });

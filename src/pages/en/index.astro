@@ -8,14 +8,14 @@ console.log('lang: ', lang);
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
+	<main class="w-10/12 max-w-[1024px] min-w-[360px]">
 		<header class='flex justify-between'>
 			<Logo/>
 			<LanguagePicker/>
 		</header>
 		<section>
-			<div class="text-6xl">首款运行在Arweave AO上的去中心化彩票协议，简单，透明，开放。</div>
-			<div><a href=`https://docs.aolotto.com/${lang}`>从这里开始</a></div>
+			<div class="text-7xl">The first decentralized lottery protocol built on Arweave AO, Simple, Transparent and Open.</div>
+			<div><a href=`https://docs.aolotto.com/${lang}` class="btn">Get Started</a></div>
 		</section>
 		<footer>
 			<div class="">© MIT License 2024.</div>
@@ -29,15 +29,5 @@ console.log('lang: ', lang);
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-
 
 </style>
