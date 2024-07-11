@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Base.astro';
 import LanguagePicker from "@/components/LanguagePicker.astro";
 import Logo from "@/components/Logo.astro"
+import Header from "@/components/Header.astro";
 import Foot from "@/components/Foot.astro"
 import { Icon } from 'astro-icon/components'
 import {  parseLocaleByPath } from "@/i18n/utils";
@@ -10,13 +11,10 @@ const {lang} = parseLocaleByPath(Astro.url.pathname)
 
 <Layout title="Welcome to Astro.">
 	<main class="w-10/12 max-w-[1440px]">
-		<header class='flex justify-between items-center'>
-			<Logo/>
-			<LanguagePicker/>
-		</header>
-		<section class="pb-32 pt-16">
-			<div class="text-[5.5em] leading-[1.2] font-display">The first decentralized <span class="bg-base-content rounded-full inline-flex px-[0.4em] text-base-200 scale-90">lottery</span> protocol built on Arweave AO, Simple, Transparent and Open.</div>
-			<div class="mt-8 flex gap-4 items-center">
+		<Header/>
+		<section class="pb-32 pt-32 lg:pt-16 flex flex-col justify-center items-center lg:items-start">
+			<div class="text-[4em]  lg:text-[5.5em] leading-[1.2] font-display text-center lg:text-left">The first decentralized <span class="bg-base-content rounded-full inline-flex px-[0.4em] text-base-200 scale-90">lottery</span> protocol built on Arweave AO, Simple, Transparent and Open.</div>
+			<div class="mt-8 flex gap-4 items-center flex-col lg:flex-row">
 				<a href=`https://docs.aolotto.com/${lang}` class="btn-primary">Get Started <Icon name="carbon:arrow-right" /></a>
 				<span class="text-base-content/50">Running on testnet.</span>
 			</div>

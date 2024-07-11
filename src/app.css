@@ -19,7 +19,7 @@
 }
 
 .btn-primary{
-  @apply border px-[1em] py-[0.5em] inline-flex border-primary-content bg-primary-content text-primary rounded-full gap-2 items-center font-bold text-xl;
+  @apply border px-[1.2em] py-[0.6em] inline-flex border-primary-content bg-primary-content text-primary rounded-full gap-2 items-center font-bold text-2xl;
   &:hover{
     @apply bg-primary text-primary-content;
   }
