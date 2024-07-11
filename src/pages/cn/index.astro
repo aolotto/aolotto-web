@@ -2,42 +2,29 @@
 import Layout from '../../layouts/Base.astro';
 import LanguagePicker from "@/components/LanguagePicker.astro";
 import Logo from "@/components/Logo.astro"
+import Foot from "@/components/Foot.astro"
+import { Icon } from 'astro-icon/components'
 import {  parseLocaleByPath } from "@/i18n/utils";
 const {lang} = parseLocaleByPath(Astro.url.pathname)
-console.log('lang: ', lang);
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<header class='flex justify-between'>
+	<main class="w-10/12 max-w-[1440px]">
+		<header class='flex justify-between items-center'>
 			<Logo/>
 			<LanguagePicker/>
 		</header>
-		<section>
-			<div class="text-6xl">首款运行在Arweave AO上的去中心化彩票协议，简单，透明，开放。</div>
-			<div><a href=`https://docs.aolotto.com/${lang}`>从这里开始</a></div>
-		</section>
-		<footer>
-			<div class="">© MIT License 2024.</div>
-			<div class="">
-				<ul>
-					<li>github</li>
-				</ul>
+		<section class="pb-32 pt-16">
+			<div class="text-[6em] leading-[1.2] ">首款运行在 Arweave AO上的去中心化<span class="bg-base-content rounded-full inline-flex px-[0.4em] text-base-200 scale-90">彩票</span>协议，简单，透明且开放。</div>
+			<div class="mt-8 flex gap-4 items-center">
+				<a href=`https://docs.aolotto.com/${lang}` class="btn-primary">从这里开始 <Icon name="carbon:arrow-right" /></a>
+				<span class="text-base-content/50">当前运行在测试网.</span>
 			</div>
-		</footer>
+		</section>
+		<Foot/>
 	</main>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-
 
 </style>

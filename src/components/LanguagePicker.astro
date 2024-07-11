@@ -10,13 +10,24 @@ const parts = Astro.url.pathname?.split('/');
 const lang = parts.shift() || parts.shift();
 const path = parts.join("/")
 ---
-<!-- <ul>
-  {Object.entries(languages).map(([locale, label]) => (
-    <li>
-      <a href={getRelativeLocaleUrl(locale,path)}>{label}</a>
-    </li>
-  ))}
-</ul> -->
-<div>
-  <Icon name="carbon:translate" />
+
+<div class="flex items-center">
+  <!-- <Icon name="carbon:translate" /> -->
+  <select class="border-none text-sm outline-0" id="langPicker">
+    {Object.entries(languages).map(([locale, label]) => (
+      <option value={locale} selected={lang===locale}>{label}</option>
+    ))}
+  </select>
 </div>
+
+<script>
+  var langPicker = document.getElementById("langPicker");
+  langPicker.onchange = function(e) {
+    console.log(e)
+    if(e.type === "change"){
+      let index = this.options.selectedIndex;
+      let value = this.options[index].value;
+      window.location.href="/"+value
+    }
+  }
+</script>

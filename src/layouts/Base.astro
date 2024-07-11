@@ -19,8 +19,11 @@ const lang = parts.shift() || parts.shift();
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="flex h-[100vh] justify-center align-middle items-center overflow-y-scroll">
-		<slot />
+	<body class="h-[100vh]">
+		<div class="w-full h-full min-h-[600px] flex justify-center items-center m-0">
+			<slot />
+		</div>
+		
 	</body>
 </html>
 <!-- <style is:global>

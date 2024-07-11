@@ -1,29 +1,40 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Skranji:wght@400;700&display=swap');
 
 @theme {
   --color-primary: #6535CD;
   --color-primary-content: #DEC9FF;
-  --color-base-100: #aaa;
-  --color-base-200: #eee;
-  --color-base-content: #111;
-}
+  --color-base-100: #eee;
+  --color-base-200: #ddd;
+  --color-base-content: #222;
 
-@media (prefers-color-scheme: dark)  {
-  @theme {
-    --color-base-100: #111;
-    --color-base-200: #333;
-    --color-base-content: #aaa;
-  }
-}
+  --font-family-display: ['Skranji', 'cursive'], "sans-serif";
+} 
+
+
 
 :root{
   @apply bg-base-100 text-base-content;
+  
 }
 
 .btn-primary{
   @apply border px-[1em] py-[0.5em] inline-flex border-primary-content bg-primary-content text-primary rounded-full gap-2 items-center font-bold text-xl;
-
   &:hover{
     @apply bg-primary text-primary-content;
+  }
+}
+a{
+  @apply text-primary;
+}
+
+@media (prefers-color-scheme: dark)  {
+  :root{
+    --color-base-100: #111;
+    --color-base-200: #333;
+    --color-base-content: #aaa;
+  }
+  a{
+    @apply text-primary-content;
   }
 }
