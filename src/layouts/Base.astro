@@ -4,7 +4,7 @@ interface Props {
 	title: string;
 }
 
-const { title="aolotto" } = Astro.props;
+const { title } = Astro.props;
 const parts = Astro.url.pathname?.split('/');
 const lang = parts.shift() || parts.shift();
 ---
@@ -17,7 +17,7 @@ const lang = parts.shift() || parts.shift();
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{title||'aolotto'}</title>
 	</head>
 	<body class="h-[100vh]">
 		<div class="w-full h-full min-h-[600px] flex justify-center lg:items-center m-0 ">
