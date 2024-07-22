@@ -15,7 +15,7 @@ const path = parts.join("/")
   <!-- <Icon name="carbon:translate" /> -->
   <select class="border-none text-sm outline-0" id="langPicker">
     {Object.entries(languages).map(([locale, label]) => (
-      <option value={locale} selected={lang===locale}>{label}</option>
+      <option value={locale=="en"?"":locale} selected={lang===locale}>{label}</option>
     ))}
   </select>
 </div>
